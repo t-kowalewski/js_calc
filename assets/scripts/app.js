@@ -2,11 +2,12 @@
 const defaultResult = 0
 let currentResult = defaultResult;
 
-// Calculation Logic
-currentResult = currentResult + 10;
+// Event Listenteners - Calc Buttons
+addBtn.addEventListener('click', add);
 
-// Calculation Description
-let calcDescription = '0 + 10';
-
-// Output Result
-outputResult(calcDescription, currentResult);
+// Calculation Logic - Functions
+function add() {
+  const calcDescription = `${currentResult} + ${userInput.value}`;
+  currentResult += userInput.valueAsNumber;
+  outputResult(calcDescription, currentResult);
+}
