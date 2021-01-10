@@ -3,6 +3,7 @@ const defaultResult = 0
 let currentResult = defaultResult;
 
 // Event Listenteners - Calc Buttons
+clearBtn.addEventListener('click', clear);
 addBtn.addEventListener('click', add);
 subtractBtn.addEventListener('click', subtract);
 multiplyBtn.addEventListener('click', multiply);
@@ -40,4 +41,10 @@ function divide() {
   const initResult = currentResult;
   currentResult /= enteredNumber;
   writeLogAndResult(initResult, '/', enteredNumber);
+}
+
+function clear() {
+  currentResult = 0;
+  userInput.value = '';
+  outputResult('', currentResult);
 }

@@ -1,5 +1,6 @@
 // Calc Actions
 const userInput = document.getElementById('input-number');
+const clearBtn = document.getElementById('btn-clear')
 const addBtn = document.getElementById('btn-add');
 const subtractBtn = document.getElementById('btn-subtract');
 const multiplyBtn = document.getElementById('btn-multiply');

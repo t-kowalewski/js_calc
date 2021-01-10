@@ -59,6 +59,11 @@ header {
   cursor: pointer;
 }
 
+#calculator #btn-clear {
+  background-color: #cc0044;
+  border: 1px solid #cc0044;
+}
+
 #calculator button:focus {
   outline: none;
 }
@@ -67,6 +72,12 @@ header {
 #calculator button:active {
   background: #084f88;
   border-color: #084f88;
+}
+
+#calculator #btn-clear:hover,
+#calculator #btn-clear:active {
+  background-color: #e6004c;
+  border-color: #e6004c;
 }
 
 #calc-actions button {
