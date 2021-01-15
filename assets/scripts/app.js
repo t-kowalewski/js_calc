@@ -72,5 +72,5 @@ function divide() {
 function clear() {
   currentResult = 0;
   userInput.value = '';
-  outputResult('', currentResult);
+  outputResult('Your calculation will appear here', currentResult);
 }
