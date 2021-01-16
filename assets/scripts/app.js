@@ -32,41 +32,45 @@ function addLogEntry(operation, num1, num2) {
   // console.log(logEntries);
 }
 
-// Calc Operations & Clear
-function add() {
+// Calc - Main Logic, Operations & Clear
+function calculation(calcOperation) {
   const enteredNumber = getUserInput();
   const initResult = currentResult;
-  currentResult += enteredNumber;
-  writeDescriptAndResult(initResult, '+', enteredNumber);
-  
-  addLogEntry('ADD', initResult, enteredNumber);
+  let mathOperator;
+
+  if (calcOperation === 'ADD') {
+    currentResult += enteredNumber;
+    mathOperator = '+';
+  } else if (calcOperation === 'SUBTRACT') {
+    currentResult -= enteredNumber;
+    mathOperator = '-';
+  } else if (calcOperation === 'MULTIPLY') {
+    currentResult *= enteredNumber;
+    mathOperator = '*';
+  } else if (calcOperation === 'DIVIDE') {
+    currentResult /= enteredNumber;
+    mathOperator = '/';
+  }
+
+  writeDescriptAndResult(initResult, mathOperator, enteredNumber);
+  addLogEntry(calcOperation, initResult, enteredNumber);
+}
+
+
+function add() {
+  calculation('ADD');
 }
 
 function subtract() {
-  const enteredNumber = getUserInput();
-  const initResult = currentResult;
-  currentResult -= enteredNumber;
-  writeDescriptAndResult(initResult, '-', enteredNumber);
-
-  addLogEntry('SUBTRACT', initResult, enteredNumber);
+  calculation('SUBTRACT');
 }
 
 function multiply() {
-  const enteredNumber = getUserInput();
-  const initResult = currentResult;
-  currentResult *= enteredNumber;
-  writeDescriptAndResult(initResult, '*', enteredNumber);
-
-  addLogEntry('MULTIPLY', initResult, enteredNumber);
+  calculation('MULTIPLY');
 }
 
 function divide() {
-  const enteredNumber = getUserInput();
-  const initResult = currentResult;
-  currentResult /= enteredNumber;
-  writeDescriptAndResult(initResult, '/', enteredNumber);
-
-  addLogEntry('DIVIDE', initResult, enteredNumber);
+  calculation('DIVIDE');
 }
 
 function clear() {
