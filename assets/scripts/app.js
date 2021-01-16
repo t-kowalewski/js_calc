@@ -34,26 +34,32 @@ function addLogEntry(operation, num1, num2) {
 
 // Calc - Main Logic, Operations & Clear
 function calculation(calcOperation) {
-  const enteredNumber = getUserInput();
-  const initResult = currentResult;
-  let mathOperator;
-
-  if (calcOperation === 'ADD') {
-    currentResult += enteredNumber;
-    mathOperator = '+';
-  } else if (calcOperation === 'SUBTRACT') {
-    currentResult -= enteredNumber;
-    mathOperator = '-';
-  } else if (calcOperation === 'MULTIPLY') {
-    currentResult *= enteredNumber;
-    mathOperator = '*';
-  } else if (calcOperation === 'DIVIDE') {
-    currentResult /= enteredNumber;
-    mathOperator = '/';
+  if (calcOperation === 'ADD' ||
+      calcOperation === 'SUBTRACT' ||
+      calcOperation === 'MULTIPLY' ||
+      calcOperation === 'DIVIDE'    
+  ) {
+    const enteredNumber = getUserInput();
+    const initResult = currentResult;
+    let mathOperator;
+  
+    if (calcOperation === 'ADD') {
+      currentResult += enteredNumber;
+      mathOperator = '+';
+    } else if (calcOperation === 'SUBTRACT') {
+      currentResult -= enteredNumber;
+      mathOperator = '-';
+    } else if (calcOperation === 'MULTIPLY') {
+      currentResult *= enteredNumber;
+      mathOperator = '*';
+    } else if (calcOperation === 'DIVIDE') {
+      currentResult /= enteredNumber;
+      mathOperator = '/';
+    }
+  
+    writeDescriptAndResult(initResult, mathOperator, enteredNumber);
+    addLogEntry(calcOperation, initResult, enteredNumber);
   }
-
-  writeDescriptAndResult(initResult, mathOperator, enteredNumber);
-  addLogEntry(calcOperation, initResult, enteredNumber);
 }
 
 
