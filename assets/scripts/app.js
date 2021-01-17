@@ -34,12 +34,14 @@ function addLogEntry(operation, num1, num2) {
 
 // Calc - Main Logic, Operations & Clear
 function calculation(calcOperation) {
-  if (calcOperation === 'ADD' ||
+  const enteredNumber = getUserInput();
+
+  if ((calcOperation === 'ADD' ||
       calcOperation === 'SUBTRACT' ||
       calcOperation === 'MULTIPLY' ||
-      calcOperation === 'DIVIDE'    
+      calcOperation === 'DIVIDE') &&
+      enteredNumber   
   ) {
-    const enteredNumber = getUserInput();
     const initResult = currentResult;
     let mathOperator;
   
