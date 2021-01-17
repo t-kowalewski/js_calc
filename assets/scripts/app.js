@@ -1,5 +1,5 @@
 // Initial Data
-const defaultResult = 0
+const defaultResult = 0;
 let currentResult = defaultResult;
 let logEntries = [];
 
@@ -26,8 +26,8 @@ function addLogEntry(operation, num1, num2) {
     operation: operation,
     num1: num1,
     num2: num2,
-    result: currentResult
-  }
+    result: currentResult,
+  };
   logEntries.push(logEntrie);
   // console.log(logEntries);
 }
@@ -36,15 +36,16 @@ function addLogEntry(operation, num1, num2) {
 function calculation(calcOperation) {
   const enteredNumber = getUserInput();
 
-  if ((calcOperation === 'ADD' ||
+  if (
+    (calcOperation === 'ADD' ||
       calcOperation === 'SUBTRACT' ||
       calcOperation === 'MULTIPLY' ||
       calcOperation === 'DIVIDE') &&
-      enteredNumber   
+    enteredNumber
   ) {
     const initResult = currentResult;
     let mathOperator;
-  
+
     if (calcOperation === 'ADD') {
       currentResult += enteredNumber;
       mathOperator = '+';
@@ -58,12 +59,11 @@ function calculation(calcOperation) {
       currentResult /= enteredNumber;
       mathOperator = '/';
     }
-  
+
     writeDescriptAndResult(initResult, mathOperator, enteredNumber);
     addLogEntry(calcOperation, initResult, enteredNumber);
   }
 }
-
 
 function add() {
   calculation('ADD');
