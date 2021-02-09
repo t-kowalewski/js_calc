@@ -5,10 +5,10 @@ let logEntries = [];
 
 // Event Listenteners - Calc Buttons
 clearBtn.addEventListener('click', clear);
-addBtn.addEventListener('click', add);
-subtractBtn.addEventListener('click', subtract);
-multiplyBtn.addEventListener('click', multiply);
-divideBtn.addEventListener('click', divide);
+addBtn.addEventListener('click', calculation.bind(this, 'ADD'));
+subtractBtn.addEventListener('click', calculation.bind(this, 'SUBTRACT'));
+multiplyBtn.addEventListener('click', calculation.bind(this, 'MULTIPLY'));
+divideBtn.addEventListener('click', calculation.bind(this, 'DIVIDE'));
 
 // Functions
 // Calculation Output & Logging Logic
@@ -65,21 +65,21 @@ function calculation(calcOperation) {
   }
 }
 
-function add() {
-  calculation('ADD');
-}
+// function add() {
+//   calculation('ADD');
+// }
 
-function subtract() {
-  calculation('SUBTRACT');
-}
+// function subtract() {
+//   calculation('SUBTRACT');
+// }
 
-function multiply() {
-  calculation('MULTIPLY');
-}
+// function multiply() {
+//   calculation('MULTIPLY');
+// }
 
-function divide() {
-  calculation('DIVIDE');
-}
+// function divide() {
+//   calculation('DIVIDE');
+// }
 
 function clear() {
   currentResult = 0;
